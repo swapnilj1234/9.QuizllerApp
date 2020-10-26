@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Use an AVPlayer
+
 class ViewControllers: UIViewController {
 
     @IBOutlet weak var questionLbl: UILabel!
@@ -17,12 +19,16 @@ class ViewControllers: UIViewController {
     @IBOutlet weak var preogressBar: UIProgressView!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
       
     }
     
-
+    
    
 }
