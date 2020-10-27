@@ -50,8 +50,25 @@ class ViewControllers: UIViewController {
         {
             pickedAnswer = false
         }
+        
+        checkAnswer()
     }
     
     
+    
+    func checkAnswer()
+    {
+        let correctAnswer = allQuestion.list[0].CorrectAnswer
+        
+        if correctAnswer == pickedAnswer
+        {
+            print("yes")
+        }
+        
+        else
+        {
+            print("no")
+        }
+    }
    
 }
