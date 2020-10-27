@@ -12,6 +12,11 @@ import UIKit
 
 class ViewControllers: UIViewController {
 
+    
+    
+    
+    let allQuestion = QuestionBank()
+    
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var progressLbl: UILabel!
     @IBOutlet weak var scoreLbl: UILabel!
@@ -25,6 +30,8 @@ class ViewControllers: UIViewController {
         super.viewDidLoad()
         
         
+        let first = allQuestion.list[0]
+        questionLbl.text = first.question
 
       
     }
