@@ -16,6 +16,7 @@ class ViewControllers: UIViewController {
     
     
     let allQuestion = QuestionBank()
+    var pickedAnswer : Bool = false
     
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var progressLbl: UILabel!
@@ -34,6 +35,21 @@ class ViewControllers: UIViewController {
         questionLbl.text = first.question
 
       
+    }
+    
+    
+    @IBAction func answerPressed(_ sender: UIButton) {
+        
+        print(sender.tag)
+        
+        if sender.tag == 1
+        {
+            pickedAnswer = true
+        }
+        else
+        {
+            pickedAnswer = false
+        }
     }
     
     
