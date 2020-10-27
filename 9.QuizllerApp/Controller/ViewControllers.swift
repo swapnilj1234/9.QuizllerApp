@@ -56,7 +56,10 @@ class ViewControllers: UIViewController {
         
         questionNumber = questionNumber + 1
         
-        questionLbl.text = allQuestion.list[questionNumber].question
+        
+        nextQuestion()
+        
+        
         
     }
     
@@ -74,6 +77,20 @@ class ViewControllers: UIViewController {
         else
         {
             print("no")
+        }
+    }
+    
+    func nextQuestion()
+    {
+        
+        if questionNumber <= 12
+        {
+        questionLbl.text = allQuestion.list[questionNumber].question
+        }
+        else
+        {
+            print("end")
+            questionNumber = 0
         }
     }
    
