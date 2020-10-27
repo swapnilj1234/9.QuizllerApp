@@ -17,6 +17,7 @@ class ViewControllers: UIViewController {
     
     let allQuestion = QuestionBank()
     var pickedAnswer : Bool = false
+    var questionNumber : Int = 0
     
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var progressLbl: UILabel!
@@ -52,13 +53,18 @@ class ViewControllers: UIViewController {
         }
         
         checkAnswer()
+        
+        questionNumber = questionNumber + 1
+        
+        questionLbl.text = allQuestion.list[questionNumber].question
+        
     }
     
     
     
     func checkAnswer()
     {
-        let correctAnswer = allQuestion.list[0].CorrectAnswer
+        let correctAnswer = allQuestion.list[questionNumber].CorrectAnswer
         
         if correctAnswer == pickedAnswer
         {
