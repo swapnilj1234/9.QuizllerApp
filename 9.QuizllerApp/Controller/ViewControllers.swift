@@ -32,8 +32,10 @@ class ViewControllers: UIViewController {
         super.viewDidLoad()
         
         
-        let first = allQuestion.list[0]
-        questionLbl.text = first.question
+        nextQuestion()
+        
+       // let first = allQuestion.list[0]
+        //questionLbl.text = first.question
 
       
     }
