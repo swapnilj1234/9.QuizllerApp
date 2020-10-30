@@ -89,9 +89,27 @@ class ViewControllers: UIViewController {
         }
         else
         {
-            print("end")
-            questionNumber = 0
+            
+            let alertController = UIAlertController(title: "Got It", message: "Finish The line , do u want to start Again?", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Restart", style: .default) { (actions) in
+                
+                
+                self.startOver()
+            }
+            
+            alertController.addAction(action)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+           
         }
+    }
+    
+    func startOver()
+    {
+        questionNumber = 0
+        nextQuestion()
     }
    
 }
