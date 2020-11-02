@@ -13,18 +13,17 @@ import UIKit
 class ViewControllers: UIViewController {
 
     
-    
-    
     let allQuestion = QuestionBank()
     var pickedAnswer : Bool = false
     var questionNumber : Int = 0
+    var score : Int = 0
     
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var progressLbl: UILabel!
     @IBOutlet weak var scoreLbl: UILabel!
     
-    @IBOutlet weak var preogressBar: UIProgressView!
-    
+    @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var pg1: UIView!
     
     
     
@@ -37,19 +36,21 @@ class ViewControllers: UIViewController {
        // let first = allQuestion.list[0]
         //questionLbl.text = first.question
 
-      
+            //pv.progress = 0.0
     }
+    
+    
     
     
     @IBAction func answerPressed(_ sender: UIButton) {
         
-        print(sender.tag)
+       // print(sender.tag)
         
         if sender.tag == 1
         {
             pickedAnswer = true
         }
-        else
+        else if sender.tag == 2
         {
             pickedAnswer = false
         }
@@ -61,11 +62,18 @@ class ViewControllers: UIViewController {
         
         nextQuestion()
         
-        
-        
+     
     }
     
     
+    func UpdateUI()
+    {
+        scoreLbl.text = "Score:\(score)"
+        progressLbl.text = "\(questionNumber + 1) /13"
+        
+         //progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNumber + 1)
+     
+        }
     
     func checkAnswer()
     {
@@ -73,12 +81,21 @@ class ViewControllers: UIViewController {
         
         if correctAnswer == pickedAnswer
         {
-            print("yes")
+            
+            
+            ProgressHUD.showSuccess("Correct")
+            
+            score += 1
+           
         }
         
         else
         {
-            print("no")
+            
+            ProgressHUD.showError("wrong")
+            
+
+            
         }
     }
     
@@ -88,6 +105,8 @@ class ViewControllers: UIViewController {
         if questionNumber <= 12
         {
         questionLbl.text = allQuestion.list[questionNumber].question
+            
+            UpdateUI()
         }
         else
         {
@@ -106,10 +125,13 @@ class ViewControllers: UIViewController {
             
            
         }
+        
+        
     }
     
     func startOver()
     {
+        score = 0
         questionNumber = 0
         nextQuestion()
     }

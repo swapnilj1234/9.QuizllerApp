@@ -83,7 +83,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmD-Wr-LFY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmD-Wr-LFY">
                                         <rect key="frame" x="278" y="0.0" width="120" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="PkB-fX-b69"/>
@@ -93,14 +93,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-KB-5bF">
-                                        <rect key="frame" x="20" y="30" width="24" height="14"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="14" id="8d5-6K-yw0"/>
-                                            <constraint firstAttribute="width" constant="24" id="kpy-XX-aj8"/>
-                                        </constraints>
-                                        <color key="progressTintColor" red="1" green="0.86578519369999996" blue="0.3006443707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1217591365" green="0.71030294120000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -108,8 +100,6 @@
                                     <constraint firstItem="Ozh-Hp-M8O" firstAttribute="top" secondItem="lBn-MD-4gZ" secondAttribute="top" id="bSS-4V-Y89"/>
                                     <constraint firstItem="Ozh-Hp-M8O" firstAttribute="leading" secondItem="lBn-MD-4gZ" secondAttribute="leading" constant="20" symbolic="YES" id="e0v-OJ-8oj"/>
                                     <constraint firstItem="HmD-Wr-LFY" firstAttribute="top" secondItem="lBn-MD-4gZ" secondAttribute="top" id="eUa-tP-7NO"/>
-                                    <constraint firstAttribute="bottom" secondItem="PTr-KB-5bF" secondAttribute="bottom" constant="20" symbolic="YES" id="h01-Mu-16b"/>
-                                    <constraint firstItem="PTr-KB-5bF" firstAttribute="leading" secondItem="lBn-MD-4gZ" secondAttribute="leading" constant="20" symbolic="YES" id="uIr-2i-JbE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -130,7 +120,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="preogressBar" destination="PTr-KB-5bF" id="LeW-M1-aBu"/>
                         <outlet property="progressLbl" destination="Ozh-Hp-M8O" id="lJN-xG-3Bw"/>
                         <outlet property="questionLbl" destination="Gdk-oh-yGB" id="4If-C9-iK1"/>
                         <outlet property="scoreLbl" destination="HmD-Wr-LFY" id="DRF-bU-fgU"/>
